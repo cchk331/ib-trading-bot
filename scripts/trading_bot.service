@@ -1,0 +1,17 @@
+[Unit]
+Description=IB Trading Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ib-trading-bot
+EnvironmentFile=/home/ubuntu/ib-trading-bot/.env
+ExecStart=/home/ubuntu/ib-trading-bot/venv/bin/python -m bot.main
+Restart=on-failure
+RestartSec=30
+StandardOutput=append:/home/ubuntu/ib-trading-bot/logs/service.log
+StandardError=append:/home/ubuntu/ib-trading-bot/logs/service_error.log
+
+[Install]
+WantedBy=multi-user.target
