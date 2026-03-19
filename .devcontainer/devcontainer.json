@@ -1,0 +1,28 @@
+{
+  "name": "IB Trading Bot Dev",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {}
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "forwardPorts": [4001, 4002, 7496, 7497, 8501],
+  "portsAttributes": {
+    "4001": { "label": "IB Gateway Live" },
+    "4002": { "label": "IB Gateway Paper" },
+    "7496": { "label": "TWS Live" },
+    "7497": { "label": "TWS Paper" },
+    "8501": { "label": "Streamlit Dashboard" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylint",
+        "ms-python.debugpy"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
+}
