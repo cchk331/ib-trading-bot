@@ -1,0 +1,8 @@
+ib_insync==0.9.86
+python-dotenv==1.0.1
+pandas==2.2.1
+numpy==1.26.4
+requests==2.31.0
+schedule==1.2.1
+streamlit==1.32.0
+plotly==5.19.0
